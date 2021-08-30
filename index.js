@@ -1,27 +1,33 @@
 var readlineSync = require('readline-sync');
 var username = readlineSync.question(" Tell me your name : ");
+console.log('\n')
 var score = 0;
 console.log(`Welcome ${username}, you think you know Anime?`)
+console.log('\n')
 
 function QandA(question,answer){
 
  var userAns = readlineSync.question(question);
 
  if(userAns.toLowerCase() === answer.toLowerCase()){
+   console.log('\n')
    console.log("That's Correct!")
    score+=2 ;
    console.log(` Your current score: ${score} `)
-   console.log("-----------")
+   console.log("--------------")
  } else {
+   console.log('\n')
    console.log(" Oh no that's wrong ")
    score-=1 ;
+   console.log('\n')
    console.log(`The answer is: ${answer}`)
    console.log(` Your current score: ${score} `)
-   console.log("-----------")
+   console.log("--------------")
  }
 }
- console.log(` Your score is: ${score} `)
-  console.log("-------------")
+  console.log('\n')
+  console.log(` Your score is: ${score} `)
+  console.log("--------------")
 
 
 var questions = [{
@@ -57,16 +63,18 @@ function MCQ(question,array,answer){
   var userans = readlineSync.keyInSelect(array,question);
   console.log('\n')
   if(array[userans] === answer){
+    console.log('\n')
     console.log("You are right !!");
     score+=2 ;
     console.log(` Your current score: ${score} `)
-    console.log("-----------")
+    console.log("--------------")
   }else{
+    console.log('\n')
     console.log(" Oh no that's wrong ")
     console.log(`The answer is: ${answer}`)
     score-=1 ;
     console.log(` Your current score: ${score} `)
-    console.log("-----------")
+    console.log("--------------")
   }
 };
 
